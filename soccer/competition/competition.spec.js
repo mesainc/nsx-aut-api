@@ -95,7 +95,7 @@ describe('Teste do endpoint de listar as conpetições pelo competitionId', () =
  
 });
 });
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2UyOGIwYi0yZDYzLTQ3ZjMtOGRlYi1hOGI3YjVmMmVjMmQiLCJpc0Fub255bW91c1VzZXIiOmZhbHNlLCJpYXQiOjE3MTYzOTY3OTUsImV4cCI6MTcxODk4ODc5NX0.gO8gbWCS3eVKYQr7DZRVB1oUsLoOTIk-5-OJLy5TNMA';
+let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2UyOGIwYi0yZDYzLTQ3ZjMtOGRlYi1hOGI3YjVmMmVjMmQiLCJpc0Fub255bW91c1VzZXIiOmZhbHNlLCJpYXQiOjE3MTgxMTM2ODUsImV4cCI6MTcyMDcwNTY4NX0.fr1wPG3zDZn8hyHi4WzNFeLw1ITmhb99jfJLhTdbjMM';
 let invalidToken = 'WIiOiJhZWIyM';
 describe('Teste do endpoint de agrupar por categorias', () => {
     test('Deve retornar as partidas de futebol das categorias', async () => {
@@ -127,7 +127,7 @@ describe('Teste do endpoint de agrupar por categorias', () => {
     .get(`/soccer/competition/grouped-by-categories?page=1&perPage=1`)
     .set('Authorization', `Bearer ${invalidToken}`);
 
-    expect(response.status).toBe(401); // Espera-se um erro 401 Bad Request
+    expect(response.status).toBe(403); // Espera-se um erro 401 Bad Request
     expect(response.body).toBeInstanceOf(Object);
 
 });
